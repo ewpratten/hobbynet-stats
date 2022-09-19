@@ -91,6 +91,21 @@
                         <td>{{ leaderboard.most_announcements.winners | join(' ') | safe }}</td>
                         <td>{{ leaderboard.most_announcements.count }} Routes</td>
                     </tr>
+                    <tr>
+                        <td>Largest IPv4</td>
+                        <td>{{ leaderboard.largest_prefix_v4.winners | join(' ') | safe }}</td>
+                        <td>announcing /{{ leaderboard.largest_prefix_v4.size }}</td>
+                    </tr>
+                    <tr>
+                        <td>Largest IPv6</td>
+                        <td>{{ leaderboard.largest_prefix_v6.winners | join(' ') | safe }}</td>
+                        <td>announcing /{{ leaderboard.largest_prefix_v6.size }}</td>
+                    </tr>
+                    <tr>
+                        <td>Most origins</td>
+                        <td>{{ leaderboard.most_announcers.winners | join(' ') | safe }}</td>
+                        <td>Prefix: {{ leaderboard.most_announcers.prefix }}</td>
+                    </tr>
                 </tbody>
             </table>
         </article>

@@ -43,6 +43,18 @@ def build_leaderboard(data: List[Dict[str, Any]]) -> Dict[str, str]:
             "winners": [],
             "count": 0
         },
+        "largest_prefix_v4": {
+            "winners": [],
+            "size": 32,
+        },
+        "largest_prefix_v6": {
+            "winners": [],
+            "size": 128,
+        },
+        "most_announcers": {
+            "prefix": "",
+            "winners": [],
+        }
     }
 
     for asn in data:
@@ -101,7 +113,37 @@ def build_leaderboard(data: List[Dict[str, Any]]) -> Dict[str, str]:
         elif len(asn["prefixes"] or []) == out["most_announcements"]["count"]:
             out["most_announcements"]["winners"].append(
                 make_linkable_as(asn["asn"])["url"])
-
+            
+        # Find the largest prefixes
+        for prefix in (asn["prefixes"] or []):
+            cidr = int(prefix.split("/")[1])
+            if cidr < out["largest_prefix_v4"]["size"] and "." in prefix:
+                out["largest_prefix_v4"]["winners"] = [
+                    make_linkable_as(asn["asn"])["url"]]
+                out["largest_prefix_v4"]["size"] = cidr
+            elif cidr == out["largest_prefix_v4"]["size"] and "." in prefix:
+                out["largest_prefix_v4"]["winners"].append(
+                    make_linkable_as(asn["asn"])["url"])
+            if cidr < out["largest_prefix_v6"]["size"] and ":" in prefix:
+                out["largest_prefix_v6"]["winners"] = [
+                    make_linkable_as(asn["asn"])["url"]]
+                out["largest_prefix_v6"]["size"] = cidr
+            elif cidr == out["largest_prefix_v6"]["size"] and ":" in prefix:
+                out["largest_prefix_v6"]["winners"].append(
+                    make_linkable_as(asn["asn"])["url"])
+                
+    prefix_to_origin_map = {}
+    for asn in data:
+        for prefix in (asn["prefixes"] or []):
+            prefix_to_origin_map.setdefault(prefix, []).append(asn["asn"])
+            
+    # Set the most announcers
+    for prefix in prefix_to_origin_map:
+        if len(prefix_to_origin_map[prefix]) > len(out["most_announcers"]["winners"]):
+            out["most_announcers"]["winners"] = [make_linkable_as(x)["url"] for x in prefix_to_origin_map[prefix]]
+            out["most_announcers"]["prefix"] = prefix
+    
+    
     return out
 
 
