@@ -20,6 +20,9 @@ jobs:
       - name: Install nc
         run: sudo apt-get install netcat
 
+      - name: Install whois
+        run: sudo apt-get install whois
+
       - name: Download data
         run: python3 get_data.py /tmp/data.jsonl
 
