@@ -10,6 +10,13 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 import matplotlib.pyplot as plt
 
 
+def make_linkable_as(asn: int) -> Dict[str, Any]:
+    return {
+        "asn": asn,
+        "url": f"<a href='https://bgp.tools/as/{asn}' target='_blank'>AS{asn}</a>"
+    }
+
+
 def build_leaderboard(data: List[Dict[str, Any]]) -> Dict[str, str]:
     out = {
         "lowest_asn": {
@@ -37,12 +44,6 @@ def build_leaderboard(data: List[Dict[str, Any]]) -> Dict[str, str]:
             "count": 0
         },
     }
-
-    def make_linkable_as(asn: int) -> Dict[str, Any]:
-        return {
-            "asn": asn,
-            "url": f"<a href='https://bgp.tools/as/{asn}' target='_blank'>AS{asn}</a>"
-        }
 
     for asn in data:
 
@@ -182,7 +183,8 @@ def graph_ip_stack_stats(stats: Dict[str, Any], output_dir: Path) -> None:
     plt.axis('equal')
     plt.title("IP Stack Statistics")
     plt.savefig(output_dir / "ip_stack.png")
-    
+
+
 def build_ripe_lir_stats(data: List[Dict[str, Any]]) -> List[Tuple[str, int]]:
     out = {
     }
@@ -193,24 +195,26 @@ def build_ripe_lir_stats(data: List[Dict[str, Any]]) -> List[Tuple[str, int]]:
         for line in data:
             f.write(f"AS{line['asn']}\n")
         f.write("quit\n")
-        
+
     # Run the query
-    process = subprocess.run(["bash", "-c", "cat /tmp/ripe_lir_stats_query.txt | nc whois.radb.net 43"], capture_output=True)
-    
+    process = subprocess.run(
+        ["bash", "-c", "cat /tmp/ripe_lir_stats_query.txt | nc whois.radb.net 43"], capture_output=True)
+
     # Parse the output
     for line in process.stdout.decode("utf-8").split("\n"):
         if line.startswith("sponsoring-org:"):
             out.setdefault(line.split(":")[1].strip(), 0)
             out[line.split(":")[1].strip()] += 1
-            
+
     # Sort the output and take top 10
     out = sorted(out.items(), key=lambda x: x[1], reverse=True)[:10]
-    
+
     # Rewrite the names to actual LIR names
     for i in range(len(out)):
-        data = subprocess.Popen(["bash", "-c", f"whois -h whois.ripe.net {out[i][0]} | grep org-name"], stdout=subprocess.PIPE).communicate()[0].decode("utf-8")
+        data = subprocess.Popen(
+            ["bash", "-c", f"whois -h whois.ripe.net {out[i][0]} | grep org-name"], stdout=subprocess.PIPE).communicate()[0].decode("utf-8")
         out[i] = (data.split(":")[1].strip(), out[i][1])
-            
+
     return out
 
 
@@ -232,6 +236,9 @@ def main() -> int:
     ip_stack_stats = build_ip_stack_stats(data)
     graph_ip_stack_stats(ip_stack_stats, out_dir)
     ripe_lir_stats = build_ripe_lir_stats(data)
+    v4_only_ases = [make_linkable_as(x["asn"])[
+        "url"] for x in data if x["prefixes"] and ":" not in " ".join(x["prefixes"])]
+    inactive_ases = [make_linkable_as(x["asn"])["url"] for x in data if not x["prefixes"]]
 
     # Set up Jinja2
     templ_env = Environment(
@@ -246,6 +253,8 @@ def main() -> int:
                                      demographics=demographics,
                                      ip_stack_stats=ip_stack_stats,
                                      ripe_lir_stats=ripe_lir_stats,
+                                     v4_only_ases=v4_only_ases,
+                                     inactive_ases=inactive_ases,
                 last_updated=datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
     return 0

@@ -179,6 +179,14 @@
             </tr>
         </table>
 
+        <br>
+
+        <h3>IPv4-only Personal ASes</h3>
+        <p>{{ v4_only_ases | join(' ') | safe}}</p>
+
+        <h3>Dormant Personal ASes</h3>
+        <p>{{ inactive_ases | join(' ') | safe}}</p>
+
 
         {# <h2>Upstreams</h2>
 
