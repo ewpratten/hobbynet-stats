@@ -48,11 +48,11 @@ def build_leaderboard(data: List[Dict[str, Any]]) -> Dict[str, str]:
     for asn in data:
 
         # Find the lowest ASN
-        if asn["asn"] < out["lowest_asn"]["asn"]:
+        if asn["asn"] < out["lowest_asn"]["asn"] and asn["prefixes"]:
             out["lowest_asn"] = make_linkable_as(asn["asn"])
 
         # Find the highest ASN
-        if asn["asn"] > out["highest_asn"]["asn"]:
+        if asn["asn"] > out["highest_asn"]["asn"] and asn["prefixes"]:
             out["highest_asn"] = make_linkable_as(asn["asn"])
 
         # Find the prefix counts
