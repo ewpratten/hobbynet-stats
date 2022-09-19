@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal ASN Report</title>
+    {#
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown-light.min.css"
+        integrity="sha512-zb2pp+R+czM7GAemdSUQt6jFmr3qCo6ikvBgVU6F5GvwEDR0C2sefFiPEJ9QUpmAKdD5EqDUdNRtbOYnbF/eyQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> #}
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+
+        <h1>Personal ASN Report</h1>
+        <p>
+            This is a page to display statistics on the usages of Personal ASNs, and their influence on the DFZ.<br>
+            The scripts behind this site were written by <a href="https://ewpratten.com">Evan Pratten</a> for use by
+            <strong>AS398057</strong> and sharing with the general networking community.
+        </p>
+
+        <h3>Table of Contents</h3>
+        <ul>
+            <li><a href="#leaderboard">The Leaderboard</a></li>
+            <li><a href="#demographics">Demographics</a></li>
+        </ul>
+
+        <hr>
+
+        <h2 id="leaderboard">The Leaderboard</h2>
+
+        <p>
+            The leaderboard is a collection of the best and worst ASes for various categories. Just because you are
+            on this list, doesn't necessarily mean its because of a good reason.
+        </p>
+
+        <article class="markdown-body">
+            <table>
+                <thead>
+                    <tr>
+                        <td>Metric</td>
+                        <td>Winner(s)</td>
+                        <td>Info</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lowest AS number</td>
+                        <td>{{ leaderboard.lowest_asn.url | safe }}</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>Highest AS number</td>
+                        <td>{{ leaderboard.highest_asn.url | safe }}</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>Most IPv4</td>
+                        <td>{{ leaderboard.most_ipv4.winners | join(' ') | safe }}</td>
+                        <td>{{ leaderboard.most_ipv4.count }} /24</td>
+                    </tr>
+                    <tr>
+                        <td>Most IPv6</td>
+                        <td>{{ leaderboard.most_ipv6.winners | join(' ') | safe }}</td>
+                        <td>{{ leaderboard.most_ipv6.count }} /48</td>
+                    </tr>
+                    <tr>
+                        <td>Most Prefixes</td>
+                        <td>{{ leaderboard.most_prefixes.winners | join(' ') | safe }}</td>
+                        <td>{{ leaderboard.most_prefixes.count }} /24 & /48</td>
+                    </tr>
+                    <tr>
+                        <td>Most Announcements</td>
+                        <td>{{ leaderboard.most_announcements.winners | join(' ') | safe }}</td>
+                        <td>{{ leaderboard.most_announcements.count }} Routes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+
+        <hr>
+
+        <h2 id="demographics">Demographics</h2>
+
+        <p>RIR popularity:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <td>RIR</td>
+                    <td>Count</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for rir in demographics.rirs %}
+                <tr>
+                    <td>{{ rir[0] }}</td>
+                    <td>{{ rir[1] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+
+        <p>Network types:</p>
+        <table>
+            <thead>
+                <tr>
+                    <td>IP Version</td>
+                    <td>Count</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ip_version in ip_stack_stats.asn_stack.items() %}
+                <tr>
+                    <td>{{ ip_version[0] }}</td>
+                    <td>{{ ip_version[1] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+
+        <p>RIPE LIRs sponsoring the most personal ASes:</p>
+        <table>
+            <thead>
+                <tr>
+                    <td>LIR</td>
+                    <td>Count</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for lir in ripe_lir_stats %}
+                <tr>
+                    <td>{{ lir[0] }}</td>
+                    <td>{{ lir[1] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <br>
+
+        <em>Click one of the graphs below to expand it</em>
+
+        <table style="width:100%;max-width:1000px;">
+            <tr>
+                <td>
+                    <strong>ASNs by RIR</strong><br>
+                    <a href="./rirs.png"><img src="./rirs.png" alt="ASNs by RIR" style="width:100%;"></a>
+                </td>
+                <td>
+                    <strong>ASNs by Country</strong><br>
+                    <a href="./countries.png"><img src="./countries.png" alt="ASNs by Country" style="width:100%;"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Internet Protocol Version</strong><br>
+                    <a href="./ip_stack.png"><img src="./ip_stack.png" alt="Internet Protocol Version" style="width:100%;"></a>
+                </td>
+            </tr>
+        </table>
+
+
+        {# <h2>Upstreams</h2>
+
+        <p>This section tracks the most popular direct upstreams of personal ASes.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <td>Upstream ASN</td>
+                    <td>Count</td>
+                </tr>
+            </thead>
+            <tbody> #}
+                {# {% for upstream in most_popular_upstreams %}
+                <tr>
+                    <td>{{ upstream.asn }}</td>
+                    <td>{{ upstream.count }}</td>
+                </tr>
+                {% endfor %} #}
+            {# </tbody>
+        </table>
+        #}
+
+        <hr>
+        <p>
+            This site was last updated at: {{ last_updated }}<br>
+            Data from: <a href="https://bgp.tools">bgp.tools</a>
+        </p> 
+
+    </div>
+
+</body>
+
+</html>

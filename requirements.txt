@@ -1,0 +1,4 @@
+dataclasses_json
+matplotlib
+requests
+jinja2
