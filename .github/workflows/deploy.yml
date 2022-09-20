@@ -29,11 +29,6 @@ jobs:
       - name: Compile site
         run: python3 build_site.py /tmp/data.jsonl
 
-      - name: Save a snapshot of the site to archive.org
-        uses: JamieMagee/wayback@v1.3.16
-        with:
-          url: as-stats.ewpratten.com
-
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
@@ -43,3 +38,9 @@ jobs:
           fqdn: as-stats.ewpratten.com
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Save a snapshot of the site to archive.org
+        uses: JamieMagee/wayback@v1.3.16
+        continue-on-error: true
+        with:
+          url: as-stats.ewpratten.com
