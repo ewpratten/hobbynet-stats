@@ -96,7 +96,7 @@ for asn in asns:
     data.setdefault(asn, {}).update(get_asn_data(asn))
     
     # Rate limit
-    time.sleep(0.8)
+    time.sleep(0.5)
 
 
 # Write the data to files
