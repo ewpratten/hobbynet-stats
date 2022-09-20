@@ -1,0 +1,9 @@
+/*
+!/makefile
+!/.gitignore
+!/scripts
+
+# Tmp
+!/as_downstreams
+!/as_upstreams
+!/as_ixps
