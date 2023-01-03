@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal ASN Report</title>
+    
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+
+        <h1>Personal ASN Report</h1>
+        <p>
+            This is a page to display statistics on the usages of Personal ASNs, and their influence on the DFZ.<br>
+            The scripts behind this site were written by <a href="https://ewpratten.com">Evan Pratten</a> for use by
+            <strong>AS398057</strong> and sharing with the general networking community.
+        </p>
+
+        <h3>Table of Contents</h3>
+        <ul>
+            <li><a href="#leaderboard">The Leaderboard</a></li>
+            <li><a href="#demographics">Demographics</a></li>
+        </ul>
+
+        <hr>
+
+        <h2 id="leaderboard">The Leaderboard</h2>
+
+        <p>
+            The leaderboard is a collection of the best and worst ASes for various categories. Just because you are
+            on this list, doesn't necessarily mean its because of a good reason.
+        </p>
+
+        <article class="markdown-body">
+            <table>
+                <thead>
+                    <tr>
+                        <td>Metric</td>
+                        <td>Winner(s)</td>
+                        <td>Info</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lowest AS number</td>
+                        <td><a href='https://bgp.tools/as/923' target='_blank'>AS923</a></td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>Highest AS number</td>
+                        <td><a href='https://bgp.tools/as/399760' target='_blank'>AS399760</a></td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>Most IPv4</td>
+                        <td><a href='https://bgp.tools/as/15562' target='_blank'>AS15562</a></td>
+                        <td>263 /24</td>
+                    </tr>
+                    <tr>
+                        <td>Most IPv6</td>
+                        <td><a href='https://bgp.tools/as/59645' target='_blank'>AS59645</a></td>
+                        <td>1048579 /48</td>
+                    </tr>
+                    <tr>
+                        <td>Most Prefixes</td>
+                        <td><a href='https://bgp.tools/as/202246' target='_blank'>AS202246</a></td>
+                        <td>1048596 /24 & /48</td>
+                    </tr>
+                    <tr>
+                        <td>Most Announcements</td>
+                        <td><a href='https://bgp.tools/as/202256' target='_blank'>AS202256</a></td>
+                        <td>431 Routes</td>
+                    </tr>
+                    <tr>
+                        <td>Largest IPv4</td>
+                        <td><a href='https://bgp.tools/as/15562' target='_blank'>AS15562</a></td>
+                        <td>announcing /17</td>
+                    </tr>
+                    <tr>
+                        <td>Largest IPv6</td>
+                        <td><a href='https://bgp.tools/as/210312' target='_blank'>AS210312</a> <a href='https://bgp.tools/as/57782' target='_blank'>AS57782</a> <a href='https://bgp.tools/as/202246' target='_blank'>AS202246</a> <a href='https://bgp.tools/as/41731' target='_blank'>AS41731</a> <a href='https://bgp.tools/as/64478' target='_blank'>AS64478</a> <a href='https://bgp.tools/as/200490' target='_blank'>AS200490</a> <a href='https://bgp.tools/as/200278' target='_blank'>AS200278</a> <a href='https://bgp.tools/as/206754' target='_blank'>AS206754</a> <a href='https://bgp.tools/as/15490' target='_blank'>AS15490</a> <a href='https://bgp.tools/as/48390' target='_blank'>AS48390</a> <a href='https://bgp.tools/as/209114' target='_blank'>AS209114</a> <a href='https://bgp.tools/as/212472' target='_blank'>AS212472</a> <a href='https://bgp.tools/as/2613' target='_blank'>AS2613</a> <a href='https://bgp.tools/as/34615' target='_blank'>AS34615</a> <a href='https://bgp.tools/as/212855' target='_blank'>AS212855</a> <a href='https://bgp.tools/as/57777' target='_blank'>AS57777</a> <a href='https://bgp.tools/as/59645' target='_blank'>AS59645</a> <a href='https://bgp.tools/as/59645' target='_blank'>AS59645</a> <a href='https://bgp.tools/as/51345' target='_blank'>AS51345</a> <a href='https://bgp.tools/as/31019' target='_blank'>AS31019</a></td>
+                        <td>announcing /29</td>
+                    </tr>
+                    <tr>
+                        <td>Most origins</td>
+                        <td><a href='https://bgp.tools/as/212276' target='_blank'>AS212276</a> <a href='https://bgp.tools/as/213045' target='_blank'>AS213045</a> <a href='https://bgp.tools/as/212123' target='_blank'>AS212123</a> <a href='https://bgp.tools/as/209718' target='_blank'>AS209718</a> <a href='https://bgp.tools/as/206271' target='_blank'>AS206271</a> <a href='https://bgp.tools/as/206016' target='_blank'>AS206016</a> <a href='https://bgp.tools/as/23428' target='_blank'>AS23428</a> <a href='https://bgp.tools/as/203619' target='_blank'>AS203619</a> <a href='https://bgp.tools/as/41666' target='_blank'>AS41666</a> <a href='https://bgp.tools/as/203888' target='_blank'>AS203888</a> <a href='https://bgp.tools/as/203458' target='_blank'>AS203458</a> <a href='https://bgp.tools/as/202262' target='_blank'>AS202262</a> <a href='https://bgp.tools/as/200676' target='_blank'>AS200676</a> <a href='https://bgp.tools/as/50224' target='_blank'>AS50224</a></td>
+                        <td>Prefix: 2a07:54c2:b00b::/48</td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+
+        <hr>
+
+        <h2 id="demographics">Demographics</h2>
+
+        <p>RIR popularity:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <td>RIR</td>
+                    <td>Count</td>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>RIPE</td>
+                    <td>829</td>
+                </tr>
+                
+                <tr>
+                    <td>APNIC</td>
+                    <td>59</td>
+                </tr>
+                
+                <tr>
+                    <td>ARIN</td>
+                    <td>25</td>
+                </tr>
+                
+                <tr>
+                    <td>Unknown</td>
+                    <td>1</td>
+                </tr>
+                
+            </tbody>
+        </table>
+        <br>
+
+        <p>Network types:</p>
+        <table>
+            <thead>
+                <tr>
+                    <td>IP Version</td>
+                    <td>Count</td>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>IPv4 Only</td>
+                    <td>40</td>
+                </tr>
+                
+                <tr>
+                    <td>IPv6 Only</td>
+                    <td>180</td>
+                </tr>
+                
+                <tr>
+                    <td>Dual-Stacked</td>
+                    <td>481</td>
+                </tr>
+                
+                <tr>
+                    <td>No Prefixes</td>
+                    <td>213</td>
+                </tr>
+                
+            </tbody>
+        </table>
+        <br>
+
+        <p>RIPE LIRs sponsoring the most personal ASes:</p>
+        <table>
+            <thead>
+                <tr>
+                    <td>LIR</td>
+                    <td>Count</td>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>Pascal Mathis trading as SnapServ Mathis</td>
+                    <td>7</td>
+                </tr>
+                
+                <tr>
+                    <td>Cedric Rossius</td>
+                    <td>2</td>
+                </tr>
+                
+                <tr>
+                    <td>June Slater</td>
+                    <td>1</td>
+                </tr>
+                
+                <tr>
+                    <td>Misaka Network, Inc.</td>
+                    <td>1</td>
+                </tr>
+                
+                <tr>
+                    <td>SpectraIP B.V.</td>
+                    <td>1</td>
+                </tr>
+                
+                <tr>
+                    <td>Openfactory GmbH</td>
+                    <td>1</td>
+                </tr>
+                
+                <tr>
+                    <td>Mythic Beasts Ltd</td>
+                    <td>1</td>
+                </tr>
+                
+                <tr>
+                    <td>iFog GmbH</td>
+                    <td>1</td>
+                </tr>
+                
+                <tr>
+                    <td>Hilko Boecker</td>
+                    <td>1</td>
+                </tr>
+                
+                <tr>
+                    <td>Marco Sandro Naef</td>
+                    <td>1</td>
+                </tr>
+                
+            </tbody>
+        </table>
+
+        <br>
+
+        <em>Click one of the graphs below to expand it</em>
+
+        <table style="width:100%;max-width:1000px;">
+            <tr>
+                <td>
+                    <strong>ASNs by RIR</strong><br>
+                    <a href="./rirs.png"><img src="./rirs.png" alt="ASNs by RIR" style="width:100%;"></a>
+                </td>
+                <td>
+                    <strong>ASNs by Country</strong><br>
+                    <a href="./countries.png"><img src="./countries.png" alt="ASNs by Country" style="width:100%;"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Internet Protocol Version</strong><br>
+                    <a href="./ip_stack.png"><img src="./ip_stack.png" alt="Internet Protocol Version" style="width:100%;"></a>
+                </td>
+            </tr>
+        </table>
+
+        <br>
+
+        <h3>IPv4-only Personal ASes</h3>
+        <p><a href='https://bgp.tools/as/39192' target='_blank'>AS39192</a> <a href='https://bgp.tools/as/203535' target='_blank'>AS203535</a> <a href='https://bgp.tools/as/42495' target='_blank'>AS42495</a> <a href='https://bgp.tools/as/11875' target='_blank'>AS11875</a> <a href='https://bgp.tools/as/43011' target='_blank'>AS43011</a> <a href='https://bgp.tools/as/43308' target='_blank'>AS43308</a> <a href='https://bgp.tools/as/207193' target='_blank'>AS207193</a> <a href='https://bgp.tools/as/137937' target='_blank'>AS137937</a> <a href='https://bgp.tools/as/204526' target='_blank'>AS204526</a> <a href='https://bgp.tools/as/44980' target='_blank'>AS44980</a> <a href='https://bgp.tools/as/208612' target='_blank'>AS208612</a> <a href='https://bgp.tools/as/212948' target='_blank'>AS212948</a> <a href='https://bgp.tools/as/212118' target='_blank'>AS212118</a> <a href='https://bgp.tools/as/202969' target='_blank'>AS202969</a> <a href='https://bgp.tools/as/198014' target='_blank'>AS198014</a> <a href='https://bgp.tools/as/24865' target='_blank'>AS24865</a> <a href='https://bgp.tools/as/204883' target='_blank'>AS204883</a> <a href='https://bgp.tools/as/202198' target='_blank'>AS202198</a> <a href='https://bgp.tools/as/57267' target='_blank'>AS57267</a> <a href='https://bgp.tools/as/2822' target='_blank'>AS2822</a> <a href='https://bgp.tools/as/206294' target='_blank'>AS206294</a> <a href='https://bgp.tools/as/30746' target='_blank'>AS30746</a> <a href='https://bgp.tools/as/35121' target='_blank'>AS35121</a> <a href='https://bgp.tools/as/60529' target='_blank'>AS60529</a> <a href='https://bgp.tools/as/205810' target='_blank'>AS205810</a> <a href='https://bgp.tools/as/211827' target='_blank'>AS211827</a> <a href='https://bgp.tools/as/202634' target='_blank'>AS202634</a> <a href='https://bgp.tools/as/50721' target='_blank'>AS50721</a> <a href='https://bgp.tools/as/9017' target='_blank'>AS9017</a> <a href='https://bgp.tools/as/198248' target='_blank'>AS198248</a> <a href='https://bgp.tools/as/197160' target='_blank'>AS197160</a> <a href='https://bgp.tools/as/208122' target='_blank'>AS208122</a> <a href='https://bgp.tools/as/212513' target='_blank'>AS212513</a> <a href='https://bgp.tools/as/209514' target='_blank'>AS209514</a> <a href='https://bgp.tools/as/62374' target='_blank'>AS62374</a> <a href='https://bgp.tools/as/50718' target='_blank'>AS50718</a> <a href='https://bgp.tools/as/212249' target='_blank'>AS212249</a> <a href='https://bgp.tools/as/56544' target='_blank'>AS56544</a> <a href='https://bgp.tools/as/51424' target='_blank'>AS51424</a> <a href='https://bgp.tools/as/8874' target='_blank'>AS8874</a> <a href='https://bgp.tools/as/31592' target='_blank'>AS31592</a> <a href='https://bgp.tools/as/212760' target='_blank'>AS212760</a> <a href='https://bgp.tools/as/198713' target='_blank'>AS198713</a> <a href='https://bgp.tools/as/52078' target='_blank'>AS52078</a> <a href='https://bgp.tools/as/211975' target='_blank'>AS211975</a> <a href='https://bgp.tools/as/211317' target='_blank'>AS211317</a> <a href='https://bgp.tools/as/206203' target='_blank'>AS206203</a> <a href='https://bgp.tools/as/1898' target='_blank'>AS1898</a> <a href='https://bgp.tools/as/208021' target='_blank'>AS208021</a> <a href='https://bgp.tools/as/212248' target='_blank'>AS212248</a> <a href='https://bgp.tools/as/948' target='_blank'>AS948</a> <a href='https://bgp.tools/as/208241' target='_blank'>AS208241</a> <a href='https://bgp.tools/as/212952' target='_blank'>AS212952</a> <a href='https://bgp.tools/as/60802' target='_blank'>AS60802</a></p>
+
+        <h3>Dormant Personal ASes</h3>
+        <p><a href='https://bgp.tools/as/137943' target='_blank'>AS137943</a> <a href='https://bgp.tools/as/205590' target='_blank'>AS205590</a> <a href='https://bgp.tools/as/210285' target='_blank'>AS210285</a> <a href='https://bgp.tools/as/137430' target='_blank'>AS137430</a> <a href='https://bgp.tools/as/203801' target='_blank'>AS203801</a> <a href='https://bgp.tools/as/137410' target='_blank'>AS137410</a> <a href='https://bgp.tools/as/137582' target='_blank'>AS137582</a> <a href='https://bgp.tools/as/51391' target='_blank'>AS51391</a> <a href='https://bgp.tools/as/43607' target='_blank'>AS43607</a> <a href='https://bgp.tools/as/205089' target='_blank'>AS205089</a> <a href='https://bgp.tools/as/209874' target='_blank'>AS209874</a> <a href='https://bgp.tools/as/209778' target='_blank'>AS209778</a> <a href='https://bgp.tools/as/202039' target='_blank'>AS202039</a> <a href='https://bgp.tools/as/206253' target='_blank'>AS206253</a> <a href='https://bgp.tools/as/209658' target='_blank'>AS209658</a> <a href='https://bgp.tools/as/132383' target='_blank'>AS132383</a> <a href='https://bgp.tools/as/204624' target='_blank'>AS204624</a> <a href='https://bgp.tools/as/203146' target='_blank'>AS203146</a> <a href='https://bgp.tools/as/204893' target='_blank'>AS204893</a> <a href='https://bgp.tools/as/205927' target='_blank'>AS205927</a> <a href='https://bgp.tools/as/205908' target='_blank'>AS205908</a> <a href='https://bgp.tools/as/58145' target='_blank'>AS58145</a> <a href='https://bgp.tools/as/202656' target='_blank'>AS202656</a> <a href='https://bgp.tools/as/209417' target='_blank'>AS209417</a> <a href='https://bgp.tools/as/204585' target='_blank'>AS204585</a> <a href='https://bgp.tools/as/49072' target='_blank'>AS49072</a> <a href='https://bgp.tools/as/205240' target='_blank'>AS205240</a> <a href='https://bgp.tools/as/204662' target='_blank'>AS204662</a> <a href='https://bgp.tools/as/210234' target='_blank'>AS210234</a> <a href='https://bgp.tools/as/205591' target='_blank'>AS205591</a> <a href='https://bgp.tools/as/209869' target='_blank'>AS209869</a> <a href='https://bgp.tools/as/43433' target='_blank'>AS43433</a> <a href='https://bgp.tools/as/204909' target='_blank'>AS204909</a> <a href='https://bgp.tools/as/205423' target='_blank'>AS205423</a> <a href='https://bgp.tools/as/206226' target='_blank'>AS206226</a> <a href='https://bgp.tools/as/202560' target='_blank'>AS202560</a> <a href='https://bgp.tools/as/39765' target='_blank'>AS39765</a> <a href='https://bgp.tools/as/60998' target='_blank'>AS60998</a> <a href='https://bgp.tools/as/205777' target='_blank'>AS205777</a> <a href='https://bgp.tools/as/205970' target='_blank'>AS205970</a> <a href='https://bgp.tools/as/201129' target='_blank'>AS201129</a> <a href='https://bgp.tools/as/205816' target='_blank'>AS205816</a> <a href='https://bgp.tools/as/201048' target='_blank'>AS201048</a> <a href='https://bgp.tools/as/204416' target='_blank'>AS204416</a> <a href='https://bgp.tools/as/205165' target='_blank'>AS205165</a> <a href='https://bgp.tools/as/62078' target='_blank'>AS62078</a> <a href='https://bgp.tools/as/204443' target='_blank'>AS204443</a> <a href='https://bgp.tools/as/205261' target='_blank'>AS205261</a> <a href='https://bgp.tools/as/204625' target='_blank'>AS204625</a> <a href='https://bgp.tools/as/210311' target='_blank'>AS210311</a> <a href='https://bgp.tools/as/50798' target='_blank'>AS50798</a> <a href='https://bgp.tools/as/209364' target='_blank'>AS209364</a> <a href='https://bgp.tools/as/138006' target='_blank'>AS138006</a> <a href='https://bgp.tools/as/203900' target='_blank'>AS203900</a> <a href='https://bgp.tools/as/208919' target='_blank'>AS208919</a> <a href='https://bgp.tools/as/41996' target='_blank'>AS41996</a> <a href='https://bgp.tools/as/44794' target='_blank'>AS44794</a> <a href='https://bgp.tools/as/48301' target='_blank'>AS48301</a> <a href='https://bgp.tools/as/208634' target='_blank'>AS208634</a> <a href='https://bgp.tools/as/208602' target='_blank'>AS208602</a> <a href='https://bgp.tools/as/58235' target='_blank'>AS58235</a> <a href='https://bgp.tools/as/209245' target='_blank'>AS209245</a> <a href='https://bgp.tools/as/208707' target='_blank'>AS208707</a> <a href='https://bgp.tools/as/200301' target='_blank'>AS200301</a> <a href='https://bgp.tools/as/208487' target='_blank'>AS208487</a> <a href='https://bgp.tools/as/208394' target='_blank'>AS208394</a> <a href='https://bgp.tools/as/200842' target='_blank'>AS200842</a> <a href='https://bgp.tools/as/208173' target='_blank'>AS208173</a> <a href='https://bgp.tools/as/208264' target='_blank'>AS208264</a> <a href='https://bgp.tools/as/49752' target='_blank'>AS49752</a> <a href='https://bgp.tools/as/207759' target='_blank'>AS207759</a> <a href='https://bgp.tools/as/207550' target='_blank'>AS207550</a> <a href='https://bgp.tools/as/207612' target='_blank'>AS207612</a> <a href='https://bgp.tools/as/49781' target='_blank'>AS49781</a> <a href='https://bgp.tools/as/35008' target='_blank'>AS35008</a> <a href='https://bgp.tools/as/207315' target='_blank'>AS207315</a> <a href='https://bgp.tools/as/212921' target='_blank'>AS212921</a> <a href='https://bgp.tools/as/208266' target='_blank'>AS208266</a> <a href='https://bgp.tools/as/206639' target='_blank'>AS206639</a> <a href='https://bgp.tools/as/212555' target='_blank'>AS212555</a> <a href='https://bgp.tools/as/212546' target='_blank'>AS212546</a> <a href='https://bgp.tools/as/207273' target='_blank'>AS207273</a> <a href='https://bgp.tools/as/50555' target='_blank'>AS50555</a> <a href='https://bgp.tools/as/212066' target='_blank'>AS212066</a> <a href='https://bgp.tools/as/212084' target='_blank'>AS212084</a> <a href='https://bgp.tools/as/212678' target='_blank'>AS212678</a> <a href='https://bgp.tools/as/205642' target='_blank'>AS205642</a> <a href='https://bgp.tools/as/212357' target='_blank'>AS212357</a> <a href='https://bgp.tools/as/208580' target='_blank'>AS208580</a> <a href='https://bgp.tools/as/211942' target='_blank'>AS211942</a> <a href='https://bgp.tools/as/207887' target='_blank'>AS207887</a> <a href='https://bgp.tools/as/212469' target='_blank'>AS212469</a> <a href='https://bgp.tools/as/213263' target='_blank'>AS213263</a> <a href='https://bgp.tools/as/50329' target='_blank'>AS50329</a> <a href='https://bgp.tools/as/212290' target='_blank'>AS212290</a> <a href='https://bgp.tools/as/212349' target='_blank'>AS212349</a> <a href='https://bgp.tools/as/209623' target='_blank'>AS209623</a> <a href='https://bgp.tools/as/50869' target='_blank'>AS50869</a> <a href='https://bgp.tools/as/202314' target='_blank'>AS202314</a> <a href='https://bgp.tools/as/207963' target='_blank'>AS207963</a> <a href='https://bgp.tools/as/212347' target='_blank'>AS212347</a> <a href='https://bgp.tools/as/213124' target='_blank'>AS213124</a> <a href='https://bgp.tools/as/212715' target='_blank'>AS212715</a> <a href='https://bgp.tools/as/196782' target='_blank'>AS196782</a> <a href='https://bgp.tools/as/212733' target='_blank'>AS212733</a> <a href='https://bgp.tools/as/49271' target='_blank'>AS49271</a> <a href='https://bgp.tools/as/212448' target='_blank'>AS212448</a> <a href='https://bgp.tools/as/209432' target='_blank'>AS209432</a> <a href='https://bgp.tools/as/211852' target='_blank'>AS211852</a> <a href='https://bgp.tools/as/212965' target='_blank'>AS212965</a> <a href='https://bgp.tools/as/212231' target='_blank'>AS212231</a> <a href='https://bgp.tools/as/211870' target='_blank'>AS211870</a> <a href='https://bgp.tools/as/212007' target='_blank'>AS212007</a> <a href='https://bgp.tools/as/212191' target='_blank'>AS212191</a> <a href='https://bgp.tools/as/212594' target='_blank'>AS212594</a> <a href='https://bgp.tools/as/213310' target='_blank'>AS213310</a> <a href='https://bgp.tools/as/208242' target='_blank'>AS208242</a> <a href='https://bgp.tools/as/44072' target='_blank'>AS44072</a> <a href='https://bgp.tools/as/212541' target='_blank'>AS212541</a> <a href='https://bgp.tools/as/212618' target='_blank'>AS212618</a> <a href='https://bgp.tools/as/212543' target='_blank'>AS212543</a> <a href='https://bgp.tools/as/213197' target='_blank'>AS213197</a> <a href='https://bgp.tools/as/209496' target='_blank'>AS209496</a> <a href='https://bgp.tools/as/208717' target='_blank'>AS208717</a> <a href='https://bgp.tools/as/212569' target='_blank'>AS212569</a> <a href='https://bgp.tools/as/211930' target='_blank'>AS211930</a> <a href='https://bgp.tools/as/60927' target='_blank'>AS60927</a> <a href='https://bgp.tools/as/211729' target='_blank'>AS211729</a> <a href='https://bgp.tools/as/211703' target='_blank'>AS211703</a> <a href='https://bgp.tools/as/213285' target='_blank'>AS213285</a> <a href='https://bgp.tools/as/41225' target='_blank'>AS41225</a> <a href='https://bgp.tools/as/212056' target='_blank'>AS212056</a> <a href='https://bgp.tools/as/211553' target='_blank'>AS211553</a> <a href='https://bgp.tools/as/213105' target='_blank'>AS213105</a> <a href='https://bgp.tools/as/211284' target='_blank'>AS211284</a> <a href='https://bgp.tools/as/211581' target='_blank'>AS211581</a> <a href='https://bgp.tools/as/209186' target='_blank'>AS209186</a> <a href='https://bgp.tools/as/399748' target='_blank'>AS399748</a> <a href='https://bgp.tools/as/207358' target='_blank'>AS207358</a> <a href='https://bgp.tools/as/211449' target='_blank'>AS211449</a> <a href='https://bgp.tools/as/211738' target='_blank'>AS211738</a> <a href='https://bgp.tools/as/41732' target='_blank'>AS41732</a> <a href='https://bgp.tools/as/211851' target='_blank'>AS211851</a> <a href='https://bgp.tools/as/211129' target='_blank'>AS211129</a> <a href='https://bgp.tools/as/213388' target='_blank'>AS213388</a> <a href='https://bgp.tools/as/210734' target='_blank'>AS210734</a> <a href='https://bgp.tools/as/210777' target='_blank'>AS210777</a> <a href='https://bgp.tools/as/211485' target='_blank'>AS211485</a> <a href='https://bgp.tools/as/210645' target='_blank'>AS210645</a> <a href='https://bgp.tools/as/213163' target='_blank'>AS213163</a> <a href='https://bgp.tools/as/212792' target='_blank'>AS212792</a> <a href='https://bgp.tools/as/210440' target='_blank'>AS210440</a> <a href='https://bgp.tools/as/210408' target='_blank'>AS210408</a> <a href='https://bgp.tools/as/210405' target='_blank'>AS210405</a> <a href='https://bgp.tools/as/210401' target='_blank'>AS210401</a> <a href='https://bgp.tools/as/210397' target='_blank'>AS210397</a> <a href='https://bgp.tools/as/210386' target='_blank'>AS210386</a> <a href='https://bgp.tools/as/210502' target='_blank'>AS210502</a> <a href='https://bgp.tools/as/210376' target='_blank'>AS210376</a> <a href='https://bgp.tools/as/210369' target='_blank'>AS210369</a> <a href='https://bgp.tools/as/210320' target='_blank'>AS210320</a> <a href='https://bgp.tools/as/209188' target='_blank'>AS209188</a> <a href='https://bgp.tools/as/59450' target='_blank'>AS59450</a> <a href='https://bgp.tools/as/205522' target='_blank'>AS205522</a> <a href='https://bgp.tools/as/205387' target='_blank'>AS205387</a> <a href='https://bgp.tools/as/210522' target='_blank'>AS210522</a> <a href='https://bgp.tools/as/209401' target='_blank'>AS209401</a> <a href='https://bgp.tools/as/211684' target='_blank'>AS211684</a> <a href='https://bgp.tools/as/47831' target='_blank'>AS47831</a> <a href='https://bgp.tools/as/210529' target='_blank'>AS210529</a> <a href='https://bgp.tools/as/210934' target='_blank'>AS210934</a> <a href='https://bgp.tools/as/207212' target='_blank'>AS207212</a> <a href='https://bgp.tools/as/210887' target='_blank'>AS210887</a> <a href='https://bgp.tools/as/207111' target='_blank'>AS207111</a> <a href='https://bgp.tools/as/209267' target='_blank'>AS209267</a> <a href='https://bgp.tools/as/206368' target='_blank'>AS206368</a> <a href='https://bgp.tools/as/207529' target='_blank'>AS207529</a> <a href='https://bgp.tools/as/210476' target='_blank'>AS210476</a> <a href='https://bgp.tools/as/394112' target='_blank'>AS394112</a> <a href='https://bgp.tools/as/205092' target='_blank'>AS205092</a> <a href='https://bgp.tools/as/204936' target='_blank'>AS204936</a> <a href='https://bgp.tools/as/204785' target='_blank'>AS204785</a> <a href='https://bgp.tools/as/211575' target='_blank'>AS211575</a> <a href='https://bgp.tools/as/204466' target='_blank'>AS204466</a> <a href='https://bgp.tools/as/207708' target='_blank'>AS207708</a> <a href='https://bgp.tools/as/13850' target='_blank'>AS13850</a> <a href='https://bgp.tools/as/204181' target='_blank'>AS204181</a> <a href='https://bgp.tools/as/204010' target='_blank'>AS204010</a> <a href='https://bgp.tools/as/64264' target='_blank'>AS64264</a> <a href='https://bgp.tools/as/203868' target='_blank'>AS203868</a> <a href='https://bgp.tools/as/203529' target='_blank'>AS203529</a> <a href='https://bgp.tools/as/205298' target='_blank'>AS205298</a> <a href='https://bgp.tools/as/398057' target='_blank'>AS398057</a> <a href='https://bgp.tools/as/203133' target='_blank'>AS203133</a> <a href='https://bgp.tools/as/203113' target='_blank'>AS203113</a> <a href='https://bgp.tools/as/203919' target='_blank'>AS203919</a> <a href='https://bgp.tools/as/203069' target='_blank'>AS203069</a> <a href='https://bgp.tools/as/202988' target='_blank'>AS202988</a> <a href='https://bgp.tools/as/202649' target='_blank'>AS202649</a> <a href='https://bgp.tools/as/202828' target='_blank'>AS202828</a> <a href='https://bgp.tools/as/202248' target='_blank'>AS202248</a> <a href='https://bgp.tools/as/203472' target='_blank'>AS203472</a> <a href='https://bgp.tools/as/201988' target='_blank'>AS201988</a> <a href='https://bgp.tools/as/202000' target='_blank'>AS202000</a> <a href='https://bgp.tools/as/203414' target='_blank'>AS203414</a> <a href='https://bgp.tools/as/51144' target='_blank'>AS51144</a> <a href='https://bgp.tools/as/9423' target='_blank'>AS9423</a> <a href='https://bgp.tools/as/200454' target='_blank'>AS200454</a> <a href='https://bgp.tools/as/200266' target='_blank'>AS200266</a> <a href='https://bgp.tools/as/200257' target='_blank'>AS200257</a> <a href='https://bgp.tools/as/200256' target='_blank'>AS200256</a> <a href='https://bgp.tools/as/201444' target='_blank'>AS201444</a> <a href='https://bgp.tools/as/907' target='_blank'>AS907</a></p>
+
+
+        
+                
+            
+
+        <hr>
+        <p>
+            This site was last updated at: 2023-01-03 05:11:17<br>
+            Data from: <a href="https://bgp.tools">bgp.tools</a><br>
+            Archived: <a href="https://web.archive.org/web/as-stats.ewpratten.com/">web.archive.org/web/as-stats.ewpratten.com</a><br>
+            Open Source: <a href="https://github.com/Ewpratten/hobbynet-stats">ewpratten/hobbynet-stats</a>
+        </p> 
+
+    </div>
+
+</body>
+
+</html>
